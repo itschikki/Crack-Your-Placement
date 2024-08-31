@@ -1,10 +1,10 @@
 class IsomorphicString {
-        public boolean isIsomorphic(String s, String t) {
+        public static boolean isIsomorphic(String s, String t) {
             if (s.length() != t.length()) {
                 return false;
             }
     
-            int[] sMap = new int[256]; // Assuming ASCII characters
+            int[] sMap = new int[256]; 
             int[] tMap = new int[256];
     
             for (int i = 0; i < s.length(); i++) {
@@ -15,15 +15,14 @@ class IsomorphicString {
                     return false;
                 }
     
-                sMap[charS] = i + 1; // Use index + 1 to avoid 0 for unused characters
+                sMap[charS] = i + 1; 
                 tMap[charT] = i + 1;
             }
     
             return true;
         }
         public static void main(String[] args) {
-            IsomorphicString obj = new IsomorphicString();
-            boolean result = obj.isIsomorphic("paper", "title");
+            boolean result = isIsomorphic("paper", "title");
             System.out.println(result);
         }
     }
