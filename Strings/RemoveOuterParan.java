@@ -1,8 +1,8 @@
-class Solution {
-    public String removeOuterParentheses(String s) {
+class RemoveOuterParan {
+    public static String removeOuterParentheses(String s) {
           StringBuilder str=new StringBuilder();
           int cnt=0;
-          for(int i=0;i<str.length();i++){
+          for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
             if(ch=='('){
                 if(cnt!=0){
@@ -17,5 +17,9 @@ class Solution {
             }
           }
           return str.toString();
+    }
+    public static void main(String[] args) {
+        String input = "(()())(())(()(()))";
+        System.out.println("Output: " + removeOuterParentheses(input));
     }
 }
